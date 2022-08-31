@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <div id="container"> 
+            <p>Teste!</p>
+        </div>
+    </body>
+    <script type="text/javascript">
+        window.addEventListener("message", (event) => {
+			console.log('Teste - Entrou aqui');
+			console.log(event.origin);
+            if (event.origin == "http://localhost:4200") {
+                var container = document.getElementById("container");
+                const textnode = document.createTextNode("Autenticado.");
+                container.appendChild(textnode);
+                console.log(event.data);
+                return;
+            }
+        }, false);
+    </script>
+</html>
