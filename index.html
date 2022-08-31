@@ -8,11 +8,10 @@
         window.addEventListener("message", (event) => {
 			console.log('Teste - Entrou aqui');
 			console.log(event.origin);
-            if (event.origin == "http://localhost:4200") {
+            if (event.origin == "http://localhost:4200" || event.origin == "https://aws-tst.localiza.dev/dg-portalcolaborador-ui-angular") {
                 var container = document.getElementById("container");
                 const textnode = document.createTextNode("Autenticado.");
                 container.appendChild(textnode);
-                console.log(event.data);
                 return;
             }
         }, false);
